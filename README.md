@@ -1,1 +1,1 @@
-<h1>Second brain app backend</h1>
+<h3>Second brain app backend</h3>
