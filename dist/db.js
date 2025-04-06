@@ -44,15 +44,15 @@ const ContentSchema = new mongoose_1.Schema({
     link: { type: String, required: true },
     type: { type: String, required: true },
     title: { type: String, required: true },
-    // tag: [{type: Types.ObjectId , ref: "Tag"}],
-    userId: { type: mongoose_1.Types.ObjectId, ref: "User" }
+    tag: [{ type: mongoose_1.Types.ObjectId, ref: "Tag" }],
+    userId: { type: mongoose_1.Types.ObjectId, ref: "User", required: true }
 });
 const TagSchema = new mongoose_1.Schema({
-    title: { type: String, required: true }
+    title: { type: String }
 });
 const LinkSchema = new mongoose_1.Schema({
-    hash: { type: String, required: true },
-    userId: { type: mongoose_1.Types.ObjectId, ref: "User" }
+    hash: { type: String },
+    userId: { type: mongoose_1.Types.ObjectId, ref: "User", required: true, unique: true }
 });
 exports.UserModel = (0, mongoose_1.model)("User", UserSchema);
 exports.ContentModel = (0, mongoose_1.model)("Content", ContentSchema);

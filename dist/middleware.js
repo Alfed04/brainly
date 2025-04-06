@@ -9,7 +9,7 @@ const config_1 = require("./config");
 const userMiddleware = (req, res, next) => {
     const token = req.headers["token"];
     const decode = jsonwebtoken_1.default.verify(token, config_1.JWT_PASSWORD);
-    console.log(decode);
+    // console.log(decode)
     if (decode) {
         //@ts-ignore
         req.userId = decode.id;
